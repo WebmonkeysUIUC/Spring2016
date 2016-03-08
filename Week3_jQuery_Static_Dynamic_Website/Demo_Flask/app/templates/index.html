@@ -1,0 +1,24 @@
+<form action="" method="post" name="post">
+	{{ form.hidden_tag() }}
+	<table>
+		<tr>
+			<td>Your First Name: </td>
+			<td>{{ form.FirstName(size=30, maxlength=140) }}</td>
+			<br />
+			<td>Your Last Name: </td>
+			<td>{{ form.LastName(size=30, maxlength=140) }}</td>
+	
+			{% for error in form.FirstName.errors %}
+			<span style="color: red;">error</span><br>
+			{% endfor %}
+			{% for error in form.LastName.errors %}
+			<span style="color: red;">error</span><br>
+			{% endfor %}
+			</td>
+		</tr>
+	<tr>
+	<td></td>
+	<td><input type="submit" value="Post!"></td>
+	<td></td>
+	</tr>
+	</table>
