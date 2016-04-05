@@ -7,9 +7,9 @@ from .forms import NameForm
 def index():
 	return "Hello World"
 
-# @app.route('/names', methods=['GET','POST'])
-# def getname():
-# 	form = NameForm()
-# 	if form.validate_on_submit():
-# 		return ("Hello"+form.FirstName.data+' '+form.LastName.data+'!')
-# 	return render_template('index.html', form=form)
+@app.route('/names', methods=['GET','POST'])
+def getname():
+	form = NameForm()
+	if form.validate_on_submit():
+		return ("Hello"+form.FirstName.data+' '+form.LastName.data+'!')
+	return render_template('index.html', form=form)
